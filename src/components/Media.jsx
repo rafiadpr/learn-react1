@@ -5,7 +5,7 @@ export default class Media extends React.Component{
         return (
             <div className={'row alert alert-' + this.props.type}>
                 <div className="col col-auto">
-                    <img src={process.env.PUBLIC_URL+'../../public/image'+this.props.image} className='mr-3' width='100 px' alt='media' />
+                    <img src={process.env.PUBLIC_URL+'/image/'+this.props.image} className='mr-3' width='100 px' alt='media' />
                 </div>
                 <div className="col col-auto text-left">
                     <h4 className="mt-0">{this.props.title}</h4>

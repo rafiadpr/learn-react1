@@ -10,19 +10,34 @@ class App extends Component {
       type: "danger",
       header: "Fatal Error",
       content: "ini content dari alert",
+      title: "Image",
+      desc: "ini ciboox 1",
+      image: "WhatsApp Image 2023-02-28 at 08.58.20.jpg"
     };
   }
-  // fungsi untuk mengubah tipe
+  //satu
   changeTypeAlert = (event) => {
     this.setState({ type: event.target.value });
   };
-  // fungsi untuk mengubah header
+
   changeHeaderAlert = (event) => {
     this.setState({ header: event.target.value });
   };
-  // fungsi untuk mengubah content
+
   changeContentAlert = (event) => {
     this.setState({ content: event.target.value });
+  };
+
+  changeTitleImage = (event) => {
+    this.setState({ title: event.target.value });
+  };
+
+  changeGambarImage = (event) => {
+    this.setState({ image: event.target.value });
+  };
+  
+  changeDescImage = (event) => {
+    this.setState({ desc: event.target.value });
   };
 
   render() {
@@ -33,15 +48,8 @@ class App extends Component {
             {this.state.content}
           </Alert>
         </div>
-        <div className="container">
-          <Media image="Logo Ciboox.png" title="React Js" type="info">
-            Framework untuk FrontEnd Development
-          </Media>
-          <Media image="logo_node.png" title="Node Js" type="success">
-            Framework untuk BackEnd Development
-          </Media>
-        </div>
         <hr />
+
         <h4>Alert Control</h4>
         <b className="text-left">Tipe Alert</b>
         <select
@@ -70,6 +78,45 @@ class App extends Component {
           className="form-control"
           value={this.state.content}
           onChange={this.changeContentAlert}
+        />
+
+        <div className="mt-3 container text-center">
+          <Media type="info" title={this.state.title} image={this.state.image}>
+          {this.state.desc}
+          </Media>
+        </div>
+
+        <hr />
+        <h4>Image Control</h4>
+
+        <b className="text-left">Image</b>
+        <select
+          className="form-control"
+          name="type"
+          value={this.state.image}
+          onChange={this.changeGambarImage}
+        >
+          <option value="WhatsApp Image 2023-02-28 at 08.58.20.jpg">Image 1</option>
+          <option value="WhatsApp Image 2023-02-28 at 08.58.21.jpg">Image 2</option>
+          <option value="WhatsApp Image 2023-02-28 at 08.58.212.jpg">Image 3</option>
+        </select>
+
+        <b className="text-left">Title</b>
+        <input
+          type="text"
+          name="title"
+          className="form-control"
+          value={this.state.title}
+          onChange={this.changeTitleImage}
+        />
+
+        <b className="text-left">Desc</b>
+        <input
+          type="text"
+          name="desc"
+          className="form-control"
+          value={this.state.desc}
+          onChange={this.changeDescImage}
         />
       </>
     );
